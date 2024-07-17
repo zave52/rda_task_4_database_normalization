@@ -27,6 +27,7 @@ CREATE TABLE Warehouses (
 CREATE TABLE ProductInventory (
     ID INT AUTO_INCREMENT,
     ProductID INT,
+    FOREIGN KEY (ProductID) REFERENCES Products(ID) ON DELETE NO ACTION,
     WarehouseID INT,
     FOREIGN KEY (WarehouseID) REFERENCES Warehouses(ID) ON DELETE NO ACTION,
     WarehouseAmount INT,
